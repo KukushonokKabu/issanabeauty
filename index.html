@@ -1,307 +1,126 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Парикмахерская Иссана | Стрижки, укладки, окрашивание | Люберцы</title>
-    <meta name="description" content="Стрижки, укладки, окрашивание в Люберцах. Октябрьский проспект, д. 1, к. 1. Опыт 10+ лет. Доступные цены. Запись по телефону и Telegram @issanabeauty.">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Парикмахерская Иссана | Стрижки, укладки, окрашивание | Люберцы</title>
+<meta name="description" content="Стрижки, укладки, окрашивание в Люберцах. Октябрьский проспект, д. 1, к. 1. Опыт 10+ лет. Доступные цены. Запись по телефону и Telegram @issanabeauty.">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body>
+<header class="header">
+<div class="container">
+<a href="./" class="logo">✂️ Парикмахерская Иссана</a>
+<nav class="nav">
+<a href="services.html">Услуги и цены</a>
+<a href="portfolio.html">Портфолио</a>
+<a href="about.html">О мастере</a>
+<a href="contacts.html">Контакты</a>
+</nav>
+<button class="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+</div>
+</header>
 
-    <!-- ===== ШАПКА ===== -->
-    <header class="header">
-        <div class="container">
-            <a href="./" class="logo">✂️ Парикмахерская Иссана</a>
-            <nav class="nav">
-                <a href="services.html">Услуги и цены</a>
-                <a href="portfolio.html">Портфолио</a>
-                <a href="about.html">О мастере</a>
-                <a href="contacts.html">Контакты</a>
-            </nav>
-            <button class="burger" aria-label="Меню">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-    </header>
+<section class="hero">
+<div class="container">
+<div class="hero-content">
+<span class="hero-badge">⭐ Опыт 10+ лет</span>
+<h1 class="hero-title">Стрижки, укладки,<br>окрашивание</h1>
+<p class="hero-subtitle">Качественные услуги без наценок за бренд.<br>Рядом с домом, по записи, без ожидания.</p>
+<div class="hero-buttons">
+<a href="tel:+79936282366" class="btn btn-phone">📞 Позвонить</a>
+<a href="https://t.me/issanabeauty" class="btn btn-telegram js-tg-link" data-username="issanabeauty" target="_blank" rel="noopener noreferrer">✈️ Telegram</a>
+</div>
+<div class="hero-hours">🕐 Пн–Пт: 10:00–21:00 | Сб–Вс: 10:00–19:00</div>
+</div>
+</div>
+</section>
 
-    <!-- ===== ГЛАВНЫЙ ЭКРАН (HERO) С ЧАСТИЦАМИ ===== -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <span class="hero-badge">⭐ Опыт 10+ лет</span>
-                <h1 class="hero-title">Стрижки, укладки,<br>окрашивание</h1>
-                <p class="hero-subtitle">Качественные услуги без наценок за бренд.<br>Рядом с домом, по записи, без ожидания.</p>
-                <div class="hero-buttons">
-                    <a href="tel:+79936282366" class="btn btn-phone">📞 Позвонить</a>
-                    <a href="#" 
-   class="btn btn-telegram" 
-   id="telegram-link">
-   ✈️ Telegram
-</a>
+<section class="pricing-philosophy">
+<div class="container">
+<h2 class="section-title">Почему у меня доступные цены</h2>
+<div class="philosophy-grid">
+<div class="philosophy-card"><h3>🏠 Без дорогой аренды</h3><p>Я работаю в уютном кабинете, а не в ТЦ с арендой 200 000 ₽/мес. Экономию чувствуете вы.</p></div>
+<div class="philosophy-card"><h3>👩 Один мастер — один стандарт</h3><p>Я работаю сама, без администраторов. Каждый рубль идёт в качество услуги.</p></div>
+<div class="philosophy-card"><h3>💇‍♀️ Полный спектр услуг</h3><p>Стрижки, укладки, окрашивание — всё в одном месте. Не нужно искать разных мастеров.</p></div>
+<div class="philosophy-card"><h3>🤝 Честные отношения</h3><p>Я не завышаю цену. Хорошая стрижка не обязана стоить 3000₽.</p></div>
+</div>
+<div class="philosophy-note"><p><strong>💡 Для справки:</strong> средняя цена мужской стрижки в нашем районе — 1700–3400₽. Я держу доступные цены, потому что это честно.</p></div>
+</div>
+</section>
 
-<script>
-document.getElementById('telegram-link').addEventListener('click', function(e) {
-  e.preventDefault();
-  const username = 'issanabeauty';
-  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-  
-  if (isMobile) {
-    // Пробуем открыть приложение
-    window.location.href = `tg://resolve?domain=${username}`;
-    // Если через 2 сек не сработало — открываем веб-версию
-    setTimeout(() => {
-      window.open(`https://t.me/${username}`, '_blank', 'noopener');
-    }, 2000);
-  } else {
-    // На ПК сразу открываем веб-версию
-    window.open(`https://t.me/${username}`, '_blank', 'noopener');
-  }
-});
-</script>
-                </div>
-                <div class="hero-hours">
-                    🕐 Пн–Пт: 10:00–21:00 | Сб–Вс: 10:00–19:00
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="why-us">
+<div class="container">
+<h2 class="section-title">Почему клиенты выбирают меня</h2>
+<div class="features">
+<div class="feature-card"><div class="feature-icon">⭐</div><h3>Опыт 10+ лет</h3><p>Стригу с 2013 года. Знаю, как подобрать форму, цвет и укладку под ваш тип и стиль.</p></div>
+<div class="feature-card"><div class="feature-icon">💇‍♀️</div><h3>Все услуги в одном месте</h3><p>Стрижки, укладки, окрашивание — не нужно ходить к разным мастерам. Я делаю всё.</p></div>
+<div class="feature-card"><div class="feature-icon">📍</div><h3>Рядом с домом</h3><p>Удобное расположение в Люберцах, на Октябрьском проспекте — не нужно ехать через весь город.</p></div>
+<div class="feature-card"><div class="feature-icon">⏱️</div><h3>Без ожидания</h3><p>Работаю по записи. Вы приходите к своему времени и не ждёте в очереди.</p></div>
+</div>
+</div>
+</section>
 
-    <!-- ===== ФИЛОСОФИЯ ЦЕН ===== -->
-    <section class="pricing-philosophy">
-        <div class="container">
-            <h2 class="section-title">Почему у меня доступные цены</h2>
-            <div class="philosophy-grid">
-                <div class="philosophy-card">
-                    <h3>🏠 Без дорогой аренды</h3>
-                    <p>Я работаю в уютном кабинете, а не в ТЦ с арендой 200 000 ₽/мес. Экономию чувствуете вы.</p>
-                </div>
-                <div class="philosophy-card">
-                    <h3>👩 Один мастер — один стандарт</h3>
-                    <p>Я работаю сама, без администраторов. Каждый рубль идёт в качество услуги.</p>
-                </div>
-                <div class="philosophy-card">
-                    <h3>💇‍♀️ Полный спектр услуг</h3>
-                    <p>Стрижки, укладки, окрашивание — всё в одном месте. Не нужно искать разных мастеров.</p>
-                </div>
-                <div class="philosophy-card">
-                    <h3>🤝 Честные отношения</h3>
-                    <p>Я не завышаю цену. Хорошая стрижка не обязана стоить 3000₽.</p>
-                </div>
-            </div>
-            <div class="philosophy-note">
-                <p><strong>💡 Для справки:</strong> средняя цена мужской стрижки в нашем районе — 1700–3400₽. Я держу доступные цены, потому что это честно.</p>
-            </div>
-        </div>
-    </section>
+<section class="schedule">
+<div class="container">
+<h2 class="section-title">Часы работы</h2>
+<div class="schedule-highlight"><p>📅 <strong>Работаю по записи.</strong> Планируйте визит заранее — я уделю вам максимум внимания.</p></div>
+<div class="schedule-grid">
+<div class="schedule-day"><span>Понедельник – Пятница</span><span>10:00 – 21:00</span></div>
+<div class="schedule-day"><span>Суббота – Воскресенье</span><span>10:00 – 19:00</span></div>
+</div>
+</div>
+</section>
 
-    <!-- ===== ПОЧЕМУ ВЫБИРАЮТ МЕНЯ ===== -->
-    <section class="why-us">
-        <div class="container">
-            <h2 class="section-title">Почему клиенты выбирают меня</h2>
-            <div class="features">
-                <div class="feature-card">
-                    <div class="feature-icon">⭐</div>
-                    <h3>Опыт 10+ лет</h3>
-                    <p>Стригу с 2013 года. Знаю, как подобрать форму, цвет и укладку под ваш тип и стиль.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">💇‍♀️</div>
-                    <h3>Все услуги в одном месте</h3>
-                    <p>Стрижки, укладки, окрашивание — не нужно ходить к разным мастерам. Я делаю всё.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📍</div>
-                    <h3>Рядом с домом</h3>
-                    <p>Удобное расположение в Люберцах, на Октябрьском проспекте — не нужно ехать через весь город.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">⏱️</div>
-                    <h3>Без ожидания</h3>
-                    <p>Работаю по записи. Вы приходите к своему времени и не ждёте в очереди.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="reviews">
+<div class="container">
+<h2 class="section-title">Что говорят клиенты</h2>
+<div class="reviews-grid">
+<div class="review-card"><div class="review-stars">⭐⭐⭐⭐⭐</div><p class="review-text">«Очень понравилась мастер Иссана, отлично постригла! Прислушалась к пожеланиям, сделала всё быстро и красиво. Цена приятная. Волосы теперь выглядят идеально ровными и ухоженными 👍»</p><p class="review-author">— Анастасия</p></div>
+<div class="review-card"><div class="review-stars">⭐⭐⭐⭐⭐</div><p class="review-text">«Хорошее место, очень душевно! Мастер Иссана профессионально подстригла, учла все пожелания и порекомендовала подходящий уход) Обязательно вернусь снова уже на окрашивание :)»</p><p class="review-author">— Екатерина Г.</p></div>
+<div class="review-card"><div class="review-stars">⭐⭐⭐⭐⭐</div><p class="review-text">«На постоянной основе посещаю эту парикмахерскую и могу рекомендовать место!!! Мастер Иссана делает шикарное каре и окрашивание. Цены демократичные, а качество всегда на высоте.»</p><p class="review-author">— Lolkigolk</p></div>
+</div>
+</div>
+</section>
 
-    <!-- ===== ЧАСЫ РАБОТЫ ===== -->
-    <section class="schedule">
-        <div class="container">
-            <h2 class="section-title">Часы работы</h2>
-            <div class="schedule-highlight">
-                <p>📅 <strong>Работаю по записи.</strong> Планируйте визит заранее — я уделю вам максимум внимания.</p>
-            </div>
-            <div class="schedule-grid">
-                <div class="schedule-day"><span>Понедельник – Пятница</span><span>10:00 – 21:00</span></div>
-                <div class="schedule-day"><span>Суббота – Воскресенье</span><span>10:00 – 19:00</span></div>
-            </div>
-        </div>
-    </section>
+<section class="cta">
+<div class="container">
+<h2 class="cta-title">Запишитесь прямо сейчас</h2>
+<p>Позвоните или напишите в Telegram — отвечаю в течение 10 минут в рабочее время</p>
+<div class="cta-buttons">
+<a href="tel:+79936282366" class="btn btn-phone btn-lg">📞 +7 (993) 628-23-66</a>
+<a href="https://t.me/issanabeauty" class="btn btn-telegram btn-lg js-tg-link" data-username="issanabeauty" target="_blank" rel="noopener noreferrer">✈️ @issanabeauty</a>
+</div>
+</div>
+</section>
 
-    <!-- ===== ОТЗЫВЫ ===== -->
-    <section class="reviews">
-        <div class="container">
-            <h2 class="section-title">Что говорят клиенты</h2>
-            <div class="reviews-grid">
-                <div class="review-card">
-                    <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                    <p class="review-text">«Очень понравилась мастер Иссана, отлично постригла! Прислушалась к 
-пожеланиям, сделала всё быстро и красиво. Цена приятная. Волосы 
-теперь выглядят идеально ровными и ухоженными 👍»</p>
-                    <p class="review-author">— Анастасия</p>
-                </div>
-                <div class="review-card">
-                    <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                    <p class="review-text">«Хорошее место, очень душевно!
-Мастер Иссана профессионально подстригла, учла все пожелания и 
-порекомендовала подходящий уход)
-Обязательно вернусь снова уже на окрашивание :)»</p>
-                    <p class="review-author">— Екатерина Г.
-</p>
-                </div>
-                <div class="review-card">
-                    <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                    <p class="review-text">«На постоянной основе посещаю эту парикмахерскую и могу 
-рекомендовать место!!! Мастер Иссана делает шикарное каре и 
-окрашивание. Цены демократичные, а качество всегда на высоте.»</p>
-                    <p class="review-author">— Lolkigolk
-</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="map-section">
+<div class="container">
+<h2 class="section-title">Как меня найти</h2>
+<address class="address-text">📍 г. Москва, Люберцы, Октябрьский проспект, д. 1, к. 1</address>
+<div class="map-wrapper">
+<iframe src="https://yandex.ru/map-widget/v1/?ll=37.857684%2C55.698711&z=17&pt=37.857684,55.698711,pm2rdl" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" title="Карта проезда"></iframe>
+</div>
+</div>
+</section>
 
-    <!-- ===== ЗАПИШИТЕСЬ СЕЙЧАС ===== -->
-    <section class="cta">
-        <div class="container">
-            <h2 class="cta-title">Запишитесь прямо сейчас</h2>
-            <p>Позвоните или напишите в Telegram — отвечаю в течение 10 минут в рабочее время</p>
-            <div class="cta-buttons">
-                <a href="tel:+79936282366" class="btn btn-phone btn-lg">📞 +7 (993) 628-23-66</a>
-                <a href="#" 
-   class="btn btn-telegram" 
-   id="telegram-link">
-   ✈️ @issanabeauty
-</a>
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div><p class="footer-logo">✂️ Парикмахерская Иссана</p><p>Стрижки • Укладки • Окрашивание</p></div>
+<div><p><a href="tel:+79936282366">📞 +7 (993) 628-23-66</a></p><p><a href="https://t.me/issanabeauty" class="js-tg-link" data-username="issanabeauty" target="_blank" rel="noopener noreferrer">✈️ @issanabeauty</a></p></div>
+<div><p>📍 Люберцы, Октябрьский пр-т, д. 1, к. 1</p><p>🕐 Пн–Пт 10:00–21:00</p><p>🕐 Сб–Вс 10:00–19:00</p></div>
+</div>
+<p class="footer-bottom">© 2026 Парикмахерская Иссана. Все права защищены.</p>
+</div>
+</footer>
 
-<script>
-document.getElementById('telegram-link').addEventListener('click', function(e) {
-  e.preventDefault();
-  const username = 'issanabeauty';
-  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-  
-  if (isMobile) {
-    // Пробуем открыть приложение
-    window.location.href = `tg://resolve?domain=${username}`;
-    // Если через 2 сек не сработало — открываем веб-версию
-    setTimeout(() => {
-      window.open(`https://t.me/${username}`, '_blank', 'noopener');
-    }, 2000);
-  } else {
-    // На ПК сразу открываем веб-версию
-    window.open(`https://t.me/${username}`, '_blank', 'noopener');
-  }
-});
-</script>
-            </div>
-        </div>
-    </section>
+<div class="mobile-fab">
+<a href="tel:+79936282366" class="fab-phone" aria-label="Позвонить">📞</a>
+<a href="https://t.me/issanabeauty" class="fab-telegram js-tg-link" aria-label="Telegram" data-username="issanabeauty" target="_blank" rel="noopener noreferrer">✈️</a>
+</div>
 
-    <!-- ===== КАРТА ===== -->
-    <section class="map-section">
-        <div class="container">
-            <h2 class="section-title">Как меня найти</h2>
-            <address class="address-text">📍 г. Москва, Люберцы, Октябрьский проспект, д. 1, к. 1</address>
-            <div class="map-wrapper">
-<iframe 
-  src="https://yandex.ru/map-widget/v1/?ll=37.857684%2C55.698711&z=17&pt=37.857684,55.698711,pm2rdl" 
-  width="100%" 
-  height="400" 
-  style="border:0;" 
-  allowfullscreen="" 
-  loading="lazy" 
-  title="Карта проезда">
-</iframe>            </div>
-        </div>
-    </section>
-
-    <!-- ===== ПОДВАЛ ===== -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <p class="footer-logo">✂️ Парикмахерская Иссана</p>
-                    <p>Стрижки • Укладки • Окрашивание</p>
-                </div>
-                <div>
-                    <p><a href="tel:+79936282366">📞 +7 (993) 628-23-66</a></p>
-                    <p><a href="#" 
-   class="btn btn-telegram" 
-   id="telegram-link">
-   ✈️ @issanabeauty
-</a>
-
-<script>
-document.getElementById('telegram-link').addEventListener('click', function(e) {
-  e.preventDefault();
-  const username = 'issanabeauty';
-  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-  
-  if (isMobile) {
-    // Пробуем открыть приложение
-    window.location.href = `tg://resolve?domain=${username}`;
-    // Если через 2 сек не сработало — открываем веб-версию
-    setTimeout(() => {
-      window.open(`https://t.me/${username}`, '_blank', 'noopener');
-    }, 2000);
-  } else {
-    // На ПК сразу открываем веб-версию
-    window.open(`https://t.me/${username}`, '_blank', 'noopener');
-  }
-});
-</script></p>
-                </div>
-                <div>
-                    <p>📍 Люберцы, Октябрьский пр-т, д. 1, к. 1</p>
-                    <p>🕐 Пн–Пт 10:00–21:00</p>
-                    <p>🕐 Сб–Вс 10:00–19:00</p>
-                </div>
-            </div>
-            <p class="footer-bottom">© 2026 Парикмахерская Иссана. Все права защищены.</p>
-        </div>
-    </footer>
-
-    <!-- ===== МОБИЛЬНАЯ КНОПКА ===== -->
-    <div class="mobile-fab">
-        <a href="tel:+79936282366" class="fab-phone" aria-label="Позвонить">📞</a>
-        <a href="#" 
-   class="btn btn-telegram" 
-   id="telegram-link">
-   ✈️
-</a>
-
-<script>
-document.getElementById('telegram-link').addEventListener('click', function(e) {
-  e.preventDefault();
-  const username = 'issanabeauty';
-  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-  
-  if (isMobile) {
-    // Пробуем открыть приложение
-    window.location.href = `tg://resolve?domain=${username}`;
-    // Если через 2 сек не сработало — открываем веб-версию
-    setTimeout(() => {
-      window.open(`https://t.me/${username}`, '_blank', 'noopener');
-    }, 2000);
-  } else {
-    // На ПК сразу открываем веб-версию
-    window.open(`https://t.me/${username}`, '_blank', 'noopener');
-  }
-});
-</script>
-    </div>
-
-    <script src="js/main.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
