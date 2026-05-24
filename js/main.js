@@ -3,19 +3,14 @@ document.addEventListener('DOMContentLoaded', function() {
   const burger = document.querySelector('.burger');
   const nav = document.querySelector('.nav');
   if (burger && nav) {
-    burger.addEventListener('click', function() {
-      nav.classList.toggle('active');
-    });
+    burger.addEventListener('click', () => nav.classList.toggle('active'));
     nav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        nav.classList.remove('active');
-      });
+      link.addEventListener('click', () => nav.classList.remove('active'));
     });
   }
 
   // ===== АНИМАЦИЯ ПРИ СКРОЛЛЕ =====
   const fadeElements = document.querySelectorAll('.feature-card, .philosophy-card, .service-card, .review-card, .schedule-highlight');
-  const observerOptions = { threshold: 0.15, rootMargin: '0px 0px -50px 0px' };
   const fadeObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -24,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
         fadeObserver.unobserve(entry.target);
       }
     });
-  }, observerOptions);
+  }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
   fadeElements.forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(40px)';
@@ -32,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
     fadeObserver.observe(el);
   });
 
-  // ===== ЛАЙТБОКС ДЛЯ ГАЛЕРЕИ =====
+  // ===== ЛАЙТБОКС =====
   const galleryItems = document.querySelectorAll('.gallery-item img');
   if (galleryItems.length > 0) {
     const lightbox = document.createElement('div');
@@ -44,63 +39,55 @@ document.addEventListener('DOMContentLoaded', function() {
       <img src="" alt="">
     `;
     document.body.appendChild(lightbox);
-    const lightboxImg = lightbox.querySelector('img');
-    const closeBtn = lightbox.querySelector('.lightbox-close');
-    const prevBtn = lightbox.querySelector('.lightbox-prev');
-    const nextBtn = lightbox.querySelector('.lightbox-next');
-    let currentIndex = 0;
-    const imagesArray = Array.from(galleryItems);
-    function openLightbox(index) { currentIndex = index; lightboxImg.src = imagesArray[currentIndex].src; lightboxImg.alt = imagesArray[currentIndex].alt; lightbox.classList.add('active'); document.body.style.overflow = 'hidden'; }
-    function closeLightbox() { lightbox.classList.remove('active'); document.body.style.overflow = ''; }
-    function nextImage() { currentIndex = (currentIndex + 1) % imagesArray.length; lightboxImg.src = imagesArray[currentIndex].src; }
-    function prevImage() { currentIndex = (currentIndex - 1 + imagesArray.length) % imagesArray.length; lightboxImg.src = imagesArray[currentIndex].src; }
-    imagesArray.forEach((img, index) => { img.parentElement.addEventListener('click', () => openLightbox(index)); });
-    closeBtn.addEventListener('click', closeLightbox);
-    nextBtn.addEventListener('click', nextImage);
-    prevBtn.addEventListener('click', prevImage);
-    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
-    document.addEventListener('keydown', (e) => {
+    const lbImg = lightbox.querySelector('img');
+    let idx = 0;
+    const imgs = Array.from(galleryItems);
+    const open = i => { idx = i; lbImg.src = imgs[idx].src; lbImg.alt = imgs[idx].alt; lightbox.classList.add('active'); document.body.style.overflow = 'hidden'; };
+    const close = () => { lightbox.classList.remove('active'); document.body.style.overflow = ''; };
+    const next = () => { idx = (idx + 1) % imgs.length; lbImg.src = imgs[idx].src; };
+    const prev = () => { idx = (idx - 1 + imgs.length) % imgs.length; lbImg.src = imgs[idx].src; };
+    imgs.forEach((img, i) => img.parentElement.addEventListener('click', () => open(i)));
+    lightbox.querySelector('.lightbox-close').addEventListener('click', close);
+    lightbox.querySelector('.lightbox-next').addEventListener('click', next);
+    lightbox.querySelector('.lightbox-prev').addEventListener('click', prev);
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) close(); });
+    document.addEventListener('keydown', e => {
       if (!lightbox.classList.contains('active')) return;
-      if (e.key === 'Escape') closeLightbox();
-      if (e.key === 'ArrowRight') nextImage();
-      if (e.key === 'ArrowLeft') prevImage();
+      if (e.key === 'Escape') close();
+      if (e.key === 'ArrowRight') next();
+      if (e.key === 'ArrowLeft') prev();
     });
   }
 
-  // ===== ПЛАВАЮЩИЕ ЧАСТИЦЫ В HERO =====
+  // ===== ЧАСТИЦЫ В HERO =====
   const hero = document.querySelector('.hero');
   if (hero) {
-    const particlesContainer = document.createElement('div');
-    particlesContainer.className = 'hero-particles';
+    const pc = document.createElement('div');
+    pc.className = 'hero-particles';
     for (let i = 0; i < 6; i++) {
-      const particle = document.createElement('div');
-      particle.className = 'particle';
-      particlesContainer.appendChild(particle);
+      const p = document.createElement('div');
+      p.className = 'particle';
+      pc.appendChild(p);
     }
-    hero.insertBefore(particlesContainer, hero.firstChild);
+    hero.insertBefore(pc, hero.firstChild);
   }
 
-  // ===== ОБРАБОТЧИК TELEGRAM-КНОПОК (МОБИЛЬНЫЙ/ДЕСКТОП) =====
+  // ===== TELEGRAM КНОПКИ (МОБИЛЬНЫЙ / ДЕСКТОП) =====
   document.addEventListener('click', function(e) {
     const link = e.target.closest('.js-tg-link');
     if (!link) return;
-
-    // Не перехватываем, если пользователь хочет открыть в новой вкладке (Ctrl/Cmd/Shift/Колесо)
     if (e.ctrlKey || e.metaKey || e.shiftKey || e.button === 1) return;
-
+    
     e.preventDefault();
     const username = link.dataset.username || 'issanabeauty';
     const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-
+    
     if (isMobile) {
-      // Пробуем открыть приложение Telegram
       window.location.href = `tg://resolve?domain=${username}`;
-      // Если через 2 сек приложение не открылось — открываем веб-версию
       setTimeout(() => {
         window.open(`https://t.me/${username}`, '_blank', 'noopener');
       }, 2000);
     } else {
-      // На ПК сразу открываем веб-версию в новой вкладке
       window.open(`https://t.me/${username}`, '_blank', 'noopener');
     }
   });
