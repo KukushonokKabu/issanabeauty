@@ -127,7 +127,31 @@
                 <p>Позвоните или напишите в Telegram — расскажу и подберу время</p>
                 <div class="cta-buttons">
                     <a href="tel:+79936282366" class="btn btn-phone btn-lg">📞 +7 (993) 628-23-66</a>
-                    <a href="https://t.me/issanabeauty" class="btn btn-telegram btn-lg">✈️ @issanabeauty</a>
+                    <a href="#" 
+   class="btn btn-telegram" 
+   id="telegram-link">
+   ✈️@issanabeauty
+</a>
+
+<script>
+document.getElementById('telegram-link').addEventListener('click', function(e) {
+  e.preventDefault();
+  const username = 'issanabeauty';
+  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  
+  if (isMobile) {
+    // Пробуем открыть приложение
+    window.location.href = `tg://resolve?domain=${username}`;
+    // Если через 2 сек не сработало — открываем веб-версию
+    setTimeout(() => {
+      window.open(`https://t.me/${username}`, '_blank', 'noopener');
+    }, 2000);
+  } else {
+    // На ПК сразу открываем веб-версию
+    window.open(`https://t.me/${username}`, '_blank', 'noopener');
+  }
+});
+</script>  - 
                 </div>
             </div>
         </section>
@@ -142,7 +166,31 @@
                 </div>
                 <div>
                     <p><a href="tel:+79936282366">📞 +7 (993) 628-23-66</a></p>
-                    <p><a href="https://t.me/issanabeauty">✈️ @issanabeauty</a></p>
+                    <p><a href="#" 
+   class="btn btn-telegram" 
+   id="telegram-link">
+   ✈️@issanabeauty
+</a>
+
+<script>
+document.getElementById('telegram-link').addEventListener('click', function(e) {
+  e.preventDefault();
+  const username = 'issanabeauty';
+  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  
+  if (isMobile) {
+    // Пробуем открыть приложение
+    window.location.href = `tg://resolve?domain=${username}`;
+    // Если через 2 сек не сработало — открываем веб-версию
+    setTimeout(() => {
+      window.open(`https://t.me/${username}`, '_blank', 'noopener');
+    }, 2000);
+  } else {
+    // На ПК сразу открываем веб-версию
+    window.open(`https://t.me/${username}`, '_blank', 'noopener');
+  }
+});
+</script></p>
                 </div>
                 <div>
                     <p>📍 Люберцы, Октябрьский пр-т, д. 1, к. 1</p>
@@ -155,7 +203,31 @@
 
     <div class="mobile-fab">
         <a href="tel:+79936282366" class="fab-phone" aria-label="Позвонить">📞</a>
-        <a href="https://t.me/issanabeauty" class="fab-telegram" aria-label="Telegram">✈️</a>
+        <a href="#" 
+   class="btn btn-telegram" 
+   id="telegram-link">
+   ✈️
+</a>
+
+<script>
+document.getElementById('telegram-link').addEventListener('click', function(e) {
+  e.preventDefault();
+  const username = 'issanabeauty';
+  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  
+  if (isMobile) {
+    // Пробуем открыть приложение
+    window.location.href = `tg://resolve?domain=${username}`;
+    // Если через 2 сек не сработало — открываем веб-версию
+    setTimeout(() => {
+      window.open(`https://t.me/${username}`, '_blank', 'noopener');
+    }, 2000);
+  } else {
+    // На ПК сразу открываем веб-версию
+    window.open(`https://t.me/${username}`, '_blank', 'noopener');
+  }
+});
+</script>
     </div>
 
     <script src="js/main.js"></script>
