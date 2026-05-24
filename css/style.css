@@ -1026,3 +1026,23 @@ section {
         display: none;
     }
 }
+/* ============================================ */
+/*  ДОСТУПНОСТЬ И СТАБИЛЬНОСТЬ                  */
+/* ============================================ */
+/* Визуальный фокус для навигации клавиатурой */
+:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Защита от скачков верстки (CLS) */
+img, video, iframe {
+  height: auto;
+  max-width: 100%;
+}
+
+/* Плавное появление кнопок Telegram при загрузке */
+.js-tg-link {
+  transition: opacity 0.3s ease;
+}
